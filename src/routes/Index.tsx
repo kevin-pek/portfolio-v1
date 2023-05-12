@@ -18,7 +18,7 @@ export default function Index() {
   const scroll = useScroll()
   const tl = useRef<gsap.core.Timeline>()
   const darkMode = useDarkMode((state) => state.darkMode)
-  const bgColors = useRef({ colorA: '#6358AD', colorB: '#222', start: 1, end: 0.2 })
+  const bgColors = useRef({ colorA: '#6358AD', colorB: '#222', start: 1, end: 0 })
 
   useFrame(({ mouse }) => {
     cam.current.position.x = THREE.MathUtils.lerp(cam.current.position.x, mouse.x / window.innerWidth * 30 + camOffset.current.x, 0.05)
@@ -30,10 +30,13 @@ export default function Index() {
   useLayoutEffect(() => {
     tl.current = gsap.timeline()
     
+    // hero section
     tl.current.to(camOffset.current, { duration: 1, y: -2 })
-    tl.current.to(bgColors.current, { duration: 1, start: 1.3, end: 0.5 }, '<')
+    tl.current.to(bgColors.current, { duration: 2, end: 0.5 }, '<')
+    tl.current.to(bgColors.current, { duration: 1, colorA: '#222' }, '<')
 
-    tl.current.to(bgColors.current, { delay: 1, colorA: '#BEE1FD', colorB: '#E6E6D8', duration: 1 })
+    // experience section, transition to light colors
+    tl.current.to(bgColors.current, { duration: 1, colorA: '#BEE1FD', colorB: '#E6E6D8' })
     tl.current.to(bgColors.current, { duration: 1, start: 0.2, end: -0.2 }, '<')
   }, [])
 

@@ -15,20 +15,24 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='text-cold-50 fixed top-0 z-50 mx-auto flex h-16 w-full flex-row items-center justify-between bg-transparent p-8'>
+      <nav className='fixed top-0 z-50 mx-auto flex h-16 w-full flex-row items-center justify-between bg-transparent p-8 text-gray-100'>
+        {/*
         <div>
           <h1 className='text-2xl'>Kevin Pek</h1>
         </div>
+        */}
 
-        <ul className='hidden list-none flex-row gap-10 sm:flex'>
+        <ul className='mx-auto hidden list-none flex-row gap-10 sm:flex'>
           {navLinks.map((nav, i) => 
             <li key={i}>{nav}</li>
           )}
         </ul>
 
+        {/*
         <Root checked={darkMode} onCheckedChange={toggleDarkMode} className={`${darkMode ? 'bg-cold-800' : 'bg-cold-300'} relative inline-flex h-6 w-11 items-center rounded-full`}>
           <Thumb className={`${darkMode ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 rounded-full bg-white transition`} />
         </Root>
+        */}
 
         {/* mobile navbar */}
         <div className='flex items-center justify-end sm:hidden'>

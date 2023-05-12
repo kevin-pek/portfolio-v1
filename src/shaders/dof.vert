@@ -11,6 +11,6 @@ void main() {
   vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
   gl_Position = projectionMatrix * mvPosition;
   vDistance = abs(uFocus - -mvPosition.z);
-  vSize = (step(1.0 - (1.0 / uFov), position.x)) * vDistance * uBlur;
+  vSize = (step(1.0 - (1.0 / uFov), position.x)) * vDistance * uBlur * 2.0;
   gl_PointSize = vSize;
 }
