@@ -25,7 +25,7 @@ export default function Experience() {
                   <h2 className='text-2xl'>Student Researcher at NUS IORA</h2>
                   <h3 className='text-lg sm:text-xl'>Learning Platform for Intelligent Tutoring Systems using Multi Armed Bandits</h3>
                   <p>I am currently a part time student researcher at the NUS Institute of Operations Research and Analytics,
-                  over the course of a year I developed a full stack learning platform using React, MUI, Express, FastAPI and MySQL that uses a machine learning algorithm to recommend questions based on the trainee's profile to maximise their learning pace.
+                  over the course of a year I developed a full stack learning platform using React, MUI, Express, FastAPI and MySQL that uses a machine learning algorithm to recommend questions based on the trainee&apos;s profile to maximise their learning pace.
                   </p>
                   <br />
                   <p>

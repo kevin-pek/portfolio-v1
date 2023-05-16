@@ -1,3 +1,4 @@
+const vertex = `
 uniform sampler2D uPositions;
 uniform float uTime;
 uniform float uFocus;
@@ -14,3 +15,6 @@ void main() {
   vSize = (step(1.0 - (1.0 / uFov), position.x)) * vDistance * uBlur * 2.0;
   gl_PointSize = vSize;
 }
+`
+
+export default vertex
