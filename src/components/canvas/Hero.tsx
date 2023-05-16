@@ -1,7 +1,7 @@
 'use client'
 
 import { useFBO } from "@react-three/drei"
-import { createPortal, extend, useFrame, useThree } from "@react-three/fiber"
+import { createPortal, extend, useFrame } from "@react-three/fiber"
 import { useMemo, useRef, useState } from "react"
 import * as THREE from "three"
 import SimulationMaterial from "@/shaders/SimulationMaterial"
@@ -12,7 +12,7 @@ extend({ SimulationMaterial })
 extend({ DofPointsMaterial })
 extend({ DofAccPointsMaterial })
 
-// adapted from GPGPU curl-noise + DOF https://codesandbox.io/s/zgsyn
+// shaders adapted from GPGPU curl-noise + DOF https://codesandbox.io/s/zgsyn
 const speed = 0.1
 const size = 64
 const accentCount = 32

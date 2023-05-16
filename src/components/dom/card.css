@@ -1,0 +1,37 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --clr-1: #FA9A24;
+  --clr-2: #CE820F;
+  --clr-3: #6358AD;
+}
+
+/*
+.card {
+  position: relative;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -0.25rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-3),
+    var(--clr-2)
+  );
+  border-radius: inherit;
+}
+.card::after {
+  filter: blur(2.5rem);
+}
+*/

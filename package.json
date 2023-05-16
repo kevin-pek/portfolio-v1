@@ -15,9 +15,11 @@
     "@radix-ui/react-switch": "^1.0.2",
     "@react-three/drei": "^9.65.3",
     "@react-three/fiber": "^8.12.0",
+    "@react-three/postprocessing": "^2.11.3",
     "@studio-freight/lenis": "^1.0.12",
     "babel-plugin-glsl": "^1.0.0",
     "babel-plugin-macros": "^3.1.0",
+    "devicon": "^2.15.1",
     "glsl-curl-noise": "^0.0.4",
     "glsl-noise": "^0.0.0",
     "glsl-random": "^0.0.5",
@@ -61,6 +63,6 @@
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "next start",
-    "prettier": "npx prettier --list-different \"./src/**/*.{ts,tsx,md}\" \"./app/**/*.{ts,tsx,md}\"\""
+    "prettier": "npx prettier --list-different \"./src/**/*.{ts,tsx,md}\" \"./pages/**/*.{ts,tsx,md}\"\""
   }
 }
