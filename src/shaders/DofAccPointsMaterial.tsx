@@ -1,5 +1,7 @@
 import { shaderMaterial } from '@react-three/drei'
+// @ts-ignore
 import fragment from './dofGold.frag'
+// @ts-ignore
 import vertex from './dof.vert'
 
 const params = {

@@ -1,4 +1,3 @@
-const fragment = `
 uniform sampler2D positions;
 uniform float uTime;
 uniform float uCurlFreq;
@@ -19,5 +18,3 @@ void main() {
   curlPos += curl(pos * uCurlFreq * 16.0) * 0.0625;
   gl_FragColor = vec4(mix(pos, curlPos, noise(pos + t)), 1.0);
 }
-`
-export default fragment

@@ -1,6 +1,8 @@
 import { shaderMaterial } from "@react-three/drei"
 import * as THREE from 'three'
+// @ts-ignore
 import fragment from './sim.frag'
+// @ts-ignore
 import vertex from './sim.vert'
 
 const points = (width: number, height: number) => {

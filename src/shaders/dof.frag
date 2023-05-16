@@ -1,4 +1,3 @@
-const fragment = `
 uniform float uOpacity;
 varying float vDistance;
 varying float vSize;
@@ -8,8 +7,5 @@ void main() {
   if (dot(cxy, cxy) > 1.0) discard;
   if (vDistance > 0.9) discard;
   if (vSize < 5.0) discard;
-  gl_FragColor = vec4(vec3(247.0 / 255.0, 166.0 / 255.0, 35.0 / 255.0), (1.04 - clamp(vDistance * 1.5, 0.0, 1.0)));
+  gl_FragColor = vec4(vec3(59.0 / 255.0, 35.0 / 255.0, 153.0 / 255.0), (1.04 - clamp(vDistance * 1.5, 0.0, 1.0)));
 }
-`
-
-export default fragment
