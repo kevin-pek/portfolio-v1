@@ -22,7 +22,7 @@ export default function Skills({ ...props}) {
 
   useLayoutEffect(() => {
     tl.current = gsap.timeline()
-    tl.current.to(headerRef.current.position, { duration: 1, y: 2, delay: 0.6 })
+    tl.current.to(headerRef.current.position, { duration: 1, y: 2, delay: 0.65 })
   }, [headerPos])
 
   return (
