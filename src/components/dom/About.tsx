@@ -49,7 +49,7 @@ export default function About() {
       {/* hero gradient splash sticky until skills section comes out */}
       <div
         className="mx-auto bg-grey-800 bg-opacity-50 items-center h-full w-11/12 sm:w-5/6  p-4 sm:p-8"
-        style={{ backdropFilter: "blur(80px)", WebkitBackdropFilter: "blur(4px)" }}
+        style={{ backdropFilter: "blur(80px)" }}
       >
         <div className='mx-auto mt-4 sm:mt-[15vh] flex w-11/12 sm:w-5/6 flex-col gap-4 text-justify'>
           <h1 className='sm:mb-4 text-center text-5xl font-extrabold'>About Me</h1>
