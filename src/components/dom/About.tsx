@@ -13,7 +13,7 @@ interface MousePos {
 
 const Card = ({children}) => {
   const [localMousePos, setLocalMousePos] = useState<MousePos>({ x: 0, y: 0 });
-  const card = useRef();
+  const card = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
