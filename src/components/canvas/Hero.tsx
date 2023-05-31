@@ -14,8 +14,8 @@ extend({ DofAccPointsMaterial })
 
 // shaders adapted from GPGPU curl-noise + DOF https://codesandbox.io/s/zgsyn
 const speed = 0.1
-const size = 64
-const accentCount = 32
+const size = 48
+const accentCount = 24
 
 export default function Hero() {
   const [scene] = useState(() => new THREE.Scene())

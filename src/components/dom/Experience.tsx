@@ -1,3 +1,40 @@
+const Event = ({ title, role, description, points }) => {
+  return (
+    <div className="w-full pl-4 text-justify text-sm text-white sm:w-5/6 sm:text-lg">
+        <h2 className='text-2xl font-extrabold'>{title}</h2>
+        <h3 className='mt-2 text-xl sm:text-2xl'>{role}</h3>
+        <p className='mt-4'>{description}</p>
+        <ul style={{ listStyleType: 'circle' }} className='ml-4 mt-4'>
+          {points.map((p: string, i: number) => <li className="list-item" key={i}>{p}</li>)}
+        </ul>
+    </div>
+  )
+}
+
+const experiences = [
+  {
+    title: 'Full Stack Developer/Student Researcher at NUS IORA',
+    role: 'Learning Platform for Intelligent Tutoring Systems using Multi Armed Bandits',
+    description: 'Learning platform that uses a machine learning algorithm to recommend questions based on the trainee&apos;s profile to maximise their learning pace. Features dashboards for analytics, content and user management system for trainers, and a learning and quiz interface for trainees. It also features a model management system to allow machine learning algorithms to be uploaded and tested on specific groups of trainees.',
+    points: [
+      'Full stack development using React (Material UI) and Express, using Typescript.',
+      'Implemented Multi Armed Bandit algorithms in python that uses empirical estimation of a trainee\'s learning progress to optimise the exploration/exploitation involved in this process.',
+      'Deployed machine learning models using FastAPI.',
+      'Deployed applications by containerising them using Docker onto AWS.'
+    ]
+  },
+  {
+    title: 'Full Stack Intern at Idemia',
+    role: '',
+    description: '',
+    points: [
+      'Developed application for microservice orchestration in Java using Spring Boot and Apache Camel.',
+      'Wrote unit and integration tests using JUnit and Testcontainers.',
+      'Fixing bugs on various services.',
+    ]
+  },
+]
+
 export default function Experience() {
   return (
     <div className="h-[500svh] bg-[#111]">
@@ -17,27 +54,10 @@ export default function Experience() {
             <span className={`from-cold-800 to-white absolute sm:left-1/4 z-10 my-8 h-full w-[1px] bg-gradient-to-br`} />
 
             <li className='flex flex-row'>
-              <div className='hidden sm:block w-1/6'>
+              <div className='hidden w-1/6 sm:block'>
                 <h1 className='p-4 text-right text-2xl text-white'>2023</h1>
               </div>
-              <div className="w-full sm:w-5/6 pl-4 text-justify text-white text-sm sm:text-lg">
-                <div>
-                  <h2 className='text-2xl'>Student Researcher at NUS IORA</h2>
-                  <h3 className='text-lg sm:text-xl'>Learning Platform for Intelligent Tutoring Systems using Multi Armed Bandits</h3>
-                  <p>I am currently a part time student researcher at the NUS Institute of Operations Research and Analytics,
-                  over the course of a year I developed a full stack learning platform using React, MUI, Express, FastAPI and MySQL that uses a machine learning algorithm to recommend questions based on the trainee&apos;s profile to maximise their learning pace.
-                  </p>
-                  <br />
-                  <p>
-                  Among the features were dashboards for analytics, content and user management system for trainers, and a learning and quiz interface for trainees. It also features a model management
-                  system to allow machine learning algorithms to be uploaded and tested on specific groups of trainees.
-                  </p>
-                  <br />
-                  <p>
-                  Additionally, I implemented Multi Armed Bandit algorithms in python that uses empirical estimation of a trainee&apos;s learning progress to optimise the exploration/exploitation involved in this process.
-                  </p>
-                </div>
-              </div>
+              {experiences.map((exp, i) => <Event {...exp} key={i} />)}
             </li>
           </ul>
         </section>

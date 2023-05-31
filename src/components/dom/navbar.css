@@ -1,0 +1,4 @@
+#bg {
+  backdrop-filter: blur(20px);
+  mask: linear-gradient(black, transparent 60%);
+}

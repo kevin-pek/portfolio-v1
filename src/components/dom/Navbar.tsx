@@ -3,6 +3,7 @@ import Image from 'next/image'
 import menu from '/public/icons/menu.svg'
 import github from '../../../public/icons/github.png'
 import linkedin from '../../../public/icons/linkedin.svg'
+import './navbar.css'
 
 const navLinks = ['About', 'Work', 'Contact']
 
@@ -11,11 +12,22 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='fixed top-0 z-50 mx-auto flex h-16 w-full flex-row items-center justify-between bg-transparent p-8 text-gray-100'>
+      <div id='bg' className='fixed top-0 z-40 h-16 w-full' />
+      <nav className='fixed top-0 z-50 mx-auto flex h-16 w-full flex-row items-center justify-between p-8'>
         <ul className='mx-auto hidden list-none flex-row gap-10 sm:flex'>
           {navLinks.map((nav, i) => 
-            <li key={i}>{nav}</li>
+            <li key={i} className='text-gray-300 duration-500 hover:text-white'>
+              <button>{nav}</button>
+            </li>
           )}
+          <li className='flex flex-row gap-3'>
+            <a href='https://github.com/kevin-pek' target="_blank">
+              <Image src={github} alt='github' className='h-6 w-6 object-contain' />
+            </a>
+            <a href='https://www.linkedin.com/in/kevin-pek-yt' target="_blank">
+              <Image src={linkedin} alt='linkedin' className='h-6 w-6 object-contain' />
+            </a>
+          </li>
         </ul>
         {/* mobile navbar */}
         <div className='flex items-center justify-end sm:hidden'>
@@ -31,12 +43,6 @@ export default function Navbar() {
         </div>
       </nav>
       <nav className='bottom-4 right-4 flex w-fit flex-col items-center sm:fixed'>
-        <a href='https://github.com/kevin-pek' target="_blank">
-          <Image src={github} alt='github' className='h-8 w-8 object-contain' />
-        </a>
-        <a href='https://www.linkedin.com/in/kevin-pek-yt' target="_blank">
-          <Image src={linkedin} alt='linkedin' className='h-8 w-8 object-contain' />
-        </a>
       </nav>
     </>
   )

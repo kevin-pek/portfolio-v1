@@ -10,28 +10,44 @@
   --clr-3: #6358AD;
 }
 
-/*
-.card {
-  position: relative;
+.bg-shape {
+  border-radius: 9999px;
 }
 
-.card::before,
-.card::after {
+.bg-orange {
+  background-color: #EA5;
+  background: radial-gradient(61.15% 61.15% at 68.85% 66.54%, #EA5 0%, rgba(234, 88, 12, 0) 100%);
+  background: conic-gradient(from -51.38deg at 68.85% 66.54%, #EA5 0deg, rgba(234, 88, 12, 0) 360deg);
+  mix-blend-mode: color-burn;
+}
+
+.bg-purple {
+  background: conic-gradient(from -51.38deg at 68.85% 66.54%, #380CEA 0deg, rgba(234, 88, 12, 0) 360deg);
+  mix-blend-mode: color-burn;
+}
+
+.bg-blur {
+  filter: blur(80px)
+}
+
+.card {
+  --x-px: calc(var(--x) * 1px);
+  --y-px: calc(var(--y) * 1px);
+  --border: 2px;
+  backdrop-filter: blur(80px);
+}
+.card:before,
+.card:after {
   content: "";
   position: absolute;
   inset: -0.25rem;
   z-index: -1;
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--clr-1),
-    var(--clr-2),
-    var(--clr-3),
-    var(--clr-3),
-    var(--clr-2)
-  );
+  background: radial-gradient(800px circle at var(--x-px) var(--y-px), rgba(255, 255, 255, 0.3), transparent 40%);
   border-radius: inherit;
 }
-.card::after {
-  filter: blur(2.5rem);
+
+.card-content {
+  border-radius: inherit;
+  inset: var(--border);
+  z-index: 1;
 }
-*/
