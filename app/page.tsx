@@ -9,8 +9,8 @@ import Index from '@/routes/Index'
 export default function Page() {
   return (
     <>
-      <Canvas className='h-screen'>
-        <ScrollControls pages={10} damping={0}>
+      <Canvas className='h-screen' dpr={1}>
+        <ScrollControls pages={10} damping={0.1}>
           <Index />
         </ScrollControls>
       </Canvas>

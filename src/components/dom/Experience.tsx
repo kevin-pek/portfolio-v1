@@ -1,12 +1,12 @@
 const Event = ({ title, role, description, points }) => {
   return (
     <div className="w-full pl-4 text-justify text-sm text-white sm:w-5/6 sm:text-lg">
-        <h2 className='text-2xl font-extrabold'>{title}</h2>
-        <h3 className='mt-2 text-xl sm:text-2xl'>{role}</h3>
-        <p className='mt-4'>{description}</p>
-        <ul style={{ listStyleType: 'circle' }} className='ml-4 mt-4'>
-          {points.map((p: string, i: number) => <li className="list-item" key={i}>{p}</li>)}
-        </ul>
+      <h2 className='text-2xl font-extrabold'>{title}</h2>
+      <h3 className='mt-2 text-xl sm:text-2xl'>{role}</h3>
+      <p className='mt-4'>{description}</p>
+      <ul style={{ listStyleType: 'circle' }} className='ml-4 mt-4'>
+        {points.map((p: string, i: number) => <li className="list-item" key={i}>{p}</li>)}
+      </ul>
     </div>
   )
 }
@@ -33,6 +33,14 @@ const experiences = [
       'Fixing bugs on various services.',
     ]
   },
+  {
+    title: 'Modelling and Simulation Intern at DSTA',
+    role: '',
+    description: '',
+    points: [
+      'Designed and developed high fidelity simulation environments in Unity for training Reinforcement Learning agents.',
+    ]
+  }
 ]
 
 export default function Experience() {
@@ -52,13 +60,14 @@ export default function Experience() {
           <ul>
             <span className="from-cold-800 to-white absolute sm:left-1/4 z-20 mt-7 h-3 w-3 -translate-x-1.5 rounded-full bg-gradient-to-br" />
             <span className={`from-cold-800 to-white absolute sm:left-1/4 z-10 my-8 h-full w-[1px] bg-gradient-to-br`} />
-
-            <li className='flex flex-row'>
-              <div className='hidden w-1/6 sm:block'>
-                <h1 className='p-4 text-right text-2xl text-white'>2023</h1>
-              </div>
-              {experiences.map((exp, i) => <Event {...exp} key={i} />)}
-            </li>
+            {experiences.map((exp, i) =>
+              <li className='mb-4 flex flex-row' key={i}>
+                <div className='hidden w-1/6 sm:block'>
+                  <h1 className='p-4 text-right text-2xl text-white'>2023</h1>
+                </div>
+                <Event {...exp} />
+              </li>
+            )}
           </ul>
         </section>
       </div>
