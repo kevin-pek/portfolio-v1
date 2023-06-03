@@ -21,4 +21,9 @@
   ::-webkit-scrollbar {
     display: none;
   }
+
+  .bg-blur {
+    filter: blur(80px);
+    transform: translateZ(0); /* force safari to use GPU */
+  }
 }
