@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div id='bg' className='fixed top-0 z-40 h-16 w-full' />
+      <div id='bg' className='fixed top-0 z-40 hidden h-16 w-full sm:block' />
       <nav className='fixed top-0 z-50 mx-auto flex h-16 w-full flex-row items-center justify-between p-8'>
         <ul className='mx-auto hidden list-none flex-row gap-10 sm:flex'>
           {navLinks.map((nav, i) => 
