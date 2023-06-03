@@ -1,4 +1,4 @@
-import Tab from "../ui/Tab"
+import { Tab, TabContent } from "../ui/Tab"
 
 const Event = ({ title, role, description, points }) => {
   return (
@@ -23,7 +23,7 @@ export default function Experience() {
         
       <div className='-translate-y-80'>
         <Tab>
-          <div className="text-xl text-white" label="Experience">
+          <TabContent className="text-xl text-white" label="Experience">
             <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
             {/* each item has range represented by rounded rect, current month is represented by bold segment */}
               <ul>
@@ -41,9 +41,9 @@ export default function Experience() {
                 )}
               </ul>
             </section>
-          </div>
+          </TabContent>
 
-          <div className="text-xl text-white" label="Projects">
+          <TabContent className="text-xl text-white" label="Projects">
             <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
               <ul>
                 {projects.map((exp, i) =>
@@ -56,7 +56,7 @@ export default function Experience() {
                 )}
               </ul>
             </section>
-          </div>
+          </TabContent>
         </Tab>
 
       </div>

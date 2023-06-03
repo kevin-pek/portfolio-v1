@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Tab({ children }) {
+export function Tab({ children }) {
   const [active, setActive] = useState<number>(0);
 
   return (
@@ -24,4 +24,8 @@ export default function Tab({ children }) {
       })}
     </>
   )
+}
+
+export const TabContent = ({ children, label, ...props }) => {
+  return <div {...props}>{children}</div>
 }
