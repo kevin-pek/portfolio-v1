@@ -72,7 +72,7 @@ export default function Skills() {
           </Card>
 
           <Card>
-            <h1 className="mx-auto w-fit text-3xl font-extrabold text-white">Libraries and Frameworks</h1>
+            <h1 className="mx-auto w-fit text-xl font-extrabold text-white sm:text-3xl">Libraries and Frameworks</h1>
 
             <div className='flex flex-row flex-wrap justify-evenly gap-8'>
               {frameworks.map((icon, i) => (<Icon key={i}>{icon}</Icon>))}
@@ -81,7 +81,7 @@ export default function Skills() {
 
           <Card>
             <div>
-              <h1 className="mx-auto w-fit text-3xl font-extrabold text-white">Other Knowledge</h1>
+              <h1 className="mx-auto w-fit text-xl font-extrabold text-white sm:text-3xl">Further Knowledge</h1>
             </div>
 
             <div className='flex flex-row flex-wrap justify-evenly gap-8'>
