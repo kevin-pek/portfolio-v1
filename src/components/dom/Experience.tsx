@@ -1,9 +1,12 @@
+import Image from "next/image"
+import spaceshipgame from '/public/img/spaceshipgame.gif'
+import nbodysim from '/public/img/nbodysim.gif'
 import { Tab, TabContent } from "../ui/Tab"
 import { Timeline, Event, EventProps } from "../ui/Timeline"
 
 export default function Experience() {
   return (
-    <div className="bg-[#111]">
+    <section className="relative bg-[#111]">
       {/* Triangle gradient */}
       <div className="flex w-full flex-row">
         <div className="from-cold-900 h-96 w-1/2 -translate-y-40 -skew-y-12 bg-gradient-to-b to-[#111]" />
@@ -50,7 +53,7 @@ export default function Experience() {
         </Tab>
 
       </div>
-    </div>
+    </section>
   )
 }
 
@@ -125,13 +128,15 @@ const projects: EventProps[] = [
     description: 'After getting acquainted with the Unity Game Engine from my internship at DSTA, I went on to create a simple N Body simulation in Unity. This process led me to learn about shaders, which I used to speed up computations and simulate large numbers of particles.',
     skills: ['Unity', 'C#'],
     start: new Date('Jul 2021'),
-    end: new Date('Aug 2021')
+    end: new Date('Aug 2021'),
+    children: <Image src={nbodysim} alt='n body simulation' />
   },
   {
     title: 'Space Shooter Game',
     description: 'This project marked the beginning of my journey into the world of Programming. Inspired by games that simulate realistic physics such as War Thunder, I attempted to create a 2D space battle game using simple geometric shapes and math formulas learnt in school.',
     skills: ['Lua', 'LOVE2D'],
     start: new Date('Nov 2016'),
-    end: new Date('Jan 2017')
+    end: new Date('Jan 2017'),
+    children: <Image src={spaceshipgame} alt='space shooter' />
   },
 ]

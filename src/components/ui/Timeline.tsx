@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { ReactNode, useMemo } from "react";
 
 export interface EventProps {
   title: string;
@@ -8,6 +8,7 @@ export interface EventProps {
   skills?: string[];
   start?: Date;
   end?: Date;
+  children?: ReactNode
 }
 
 export const Event = ({ ...props }: EventProps) => {
@@ -35,6 +36,7 @@ export const Event = ({ ...props }: EventProps) => {
           )}
         </ul>
       : null}
+      {props.children}
     </div>
   )
 }
