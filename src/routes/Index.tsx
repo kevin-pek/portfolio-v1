@@ -1,13 +1,10 @@
 import { useLayoutEffect, useRef } from 'react'
 import * as THREE from 'three'
 import gsap from 'gsap'
-import { PerspectiveCamera, Scroll, Sphere, useScroll } from '@react-three/drei'
+import { PerspectiveCamera, Sphere } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import Hero from '@/components/canvas/Hero'
-import HeroDom from '@/components/dom/Hero'
-import SkillsDom from '@/components/dom/Skills'
-import AboutDom from '@/components/dom/About'
-import ExperienceDom from '@/components/dom/Experience'
+import useScroll from '@/hooks/useScroll'
 
 export default function Index() {
   const cam = useRef<THREE.Camera>()
@@ -16,12 +13,12 @@ export default function Index() {
   const heroRef = useRef<THREE.Group>() // hero section shader
   
   useFrame(() => {
-    tl.current.seek(scroll.offset * scroll.pages / 7 * tl.current.duration())
+    tl.current.seek(scroll * tl.current.duration())
   })
 
   useLayoutEffect(() => {
     tl.current = gsap.timeline()
-    tl.current.to(heroRef.current.position, { duration: 2, y: 3 })
+    tl.current.to(heroRef.current.position, { duration: 1, y: 1 })
   }, [])
 
   return (
@@ -34,13 +31,6 @@ export default function Index() {
       <group ref={heroRef}>
         <Hero />
       </group>
-
-      <Scroll html>
-        <HeroDom />
-        <AboutDom />
-        <SkillsDom />
-        <ExperienceDom />
-      </Scroll>
     </>
   )
 }

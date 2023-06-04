@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { PropsWithChildren, ReactElement, useState } from "react"
 
 export function Tab({ children }) {
   const [active, setActive] = useState<number>(0);
@@ -7,7 +7,7 @@ export function Tab({ children }) {
     <>
       {/* list of tabs */}
       <div className="tabs mx-auto w-fit">
-        {children.map((child, i) =>
+        {children.map((child: ReactElement<{ label: string }>, i: number) =>
           <a
             className={`tab tab-bordered ${i === active ? 'tab-active' : ''} to-cold-800 h-fit bg-gradient-to-br from-white bg-clip-text text-center text-3xl font-extrabold text-transparent`}
             onClick={() => setActive(i)}
@@ -18,7 +18,7 @@ export function Tab({ children }) {
         )}
       </div>
 
-      {children.map((child, i) => {
+      {children.map((child: ReactElement<PropsWithChildren>, i: number) => {
         if (i === active) return child.props.children;
         return null;
       })}

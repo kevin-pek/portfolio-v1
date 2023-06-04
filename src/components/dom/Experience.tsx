@@ -3,7 +3,8 @@ import { Timeline, Event, EventProps } from "../ui/Timeline"
 
 export default function Experience() {
   return (
-    <div className="h-[500svh] bg-[#111]">
+    <div className="bg-[#111]">
+      {/* Triangle gradient */}
       <div className="flex w-full flex-row">
         <div className="from-cold-900 h-96 w-1/2 -translate-y-40 -skew-y-12 bg-gradient-to-b to-[#111]" />
         <div className="from-cold-900 h-96 w-1/2 -translate-y-40 skew-y-12 bg-gradient-to-b to-[#111]" />
@@ -15,42 +16,32 @@ export default function Experience() {
 
           <div className="mb-8 flex flex-row justify-center gap-4">
             <div className="text-xl">Want a quick reference?<br />Download my resume!</div>
-            <button className='my-auto h-fit w-fit rounded-3xl border-white stroke-white p-2 hover:bg-gray-500'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
-            </button>
+            <a
+              target='_blank'
+              href='kevin-resume.pdf'
+              className='my-auto h-fit w-fit rounded-3xl border-white stroke-white p-2 hover:bg-gray-500'
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+            </a>
           </div>
         </div>
 
         <Tab>
           <TabContent className="text-xl text-white" label="Experience">
             <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
-            {/* each item has range represented by rounded rect, current month is represented by bold segment */}
-              <ul>
-                {/* timeline line */}
-                <span className="from-cold-800 absolute z-20 mt-7 h-3 w-3 -translate-x-1.5 rounded-full bg-gradient-to-br to-white sm:left-1/4" />
-                <span className={`from-cold-800 absolute z-10 my-8 h-full w-[1px] bg-gradient-to-br to-white sm:left-1/4`} />
-
-                {experiences.map((exp, i) =>
-                  <li className='mb-4 flex flex-row' key={i}>
-                    <div className='hidden w-1/6 sm:block'>
-                      <h1 className='p-4 text-right text-2xl text-white'>2023</h1>
-                    </div>
-                    <Event {...exp} />
-                  </li>
-                )}
-              </ul>
+              <Timeline events={experiences} />
             </section>
           </TabContent>
 
           <TabContent className="text-xl text-white" label="Projects">
             <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
               <ul>
-                {projects.map((exp, i) =>
+                {projects.map((event, i) =>
                   <li className='mb-4 flex flex-row' key={i}>
                     <div className='hidden w-1/6 sm:block'>
-                      <h1 className='p-4 text-right text-2xl text-white'>2023</h1>
+                      <h1 className='p-4 text-right text-xl text-white'>{event.start.toLocaleDateString('default', { month: 'short', year: '2-digit' })} — {event.end.toLocaleDateString('default', { month: 'short', year: '2-digit' })}</h1>
                     </div>
-                    <Event {...exp} />
+                    <Event {...event} />
                   </li>
                 )}
               </ul>
@@ -73,7 +64,7 @@ const experiences: EventProps[] = [
       'Implemented Multi Armed Bandit algorithms in python that uses empirical estimation of a trainee\'s learning progress to optimise the exploration/exploitation decision process.',
       'Deployed machine learning models using FastAPI.',
       'Deployed applications onto AWS EC2 using Docker Compose.',
-      'Produced detailed documentation for handover of project.'
+      'Produced detailed API documentation according to the OpenAPI definition using Redocly.'
     ],
     start: new Date('Aug 2022'),
     end: new Date('May 2023')
@@ -94,6 +85,7 @@ const experiences: EventProps[] = [
     subtitle: 'Learning Platform for Intelligent Tutoring Systems using Multi Armed Bandits',
     description: 'Developed minimum viable product for a learning platform utilising Multi Armed Bandit algorithms to recommend questions based on trainee\'s prodile data to maximise their learning.',
     points: [
+      'Researched various options for developing machine learning driven applications such as Gradio and Open edX distributions.',
       'Refactored machine learning python notebook into a REST API using Flask.',
       'Deployed application onto Heroku.'
     ],
@@ -118,6 +110,15 @@ const projects: EventProps[] = [
     subtitle: 'Backend Lead',
     description: 'Developed backend services for the nonprofit Mercy Relief.',
     skills: ['Typescript', 'Express', 'React', 'NextJs', 'Material UI'],
+    start: new Date('Aug 2022'),
+    end: new Date('Dec 2023')
+  },
+  {
+    title: 'Brainworks',
+    description: 'Quiz application developed in Unity.',
+    skills: ['Unity', 'C#'],
+    start: new Date('Mar 2022'),
+    end: new Date('May 2022')
   },
   {
     title: 'N Body Simulation in Unity',

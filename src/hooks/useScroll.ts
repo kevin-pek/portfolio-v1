@@ -5,10 +5,11 @@ const useScroll = () => {
 
   useEffect(() => {
     const update = () => {
-      const offset =
-        (document.documentElement.scrollTop - document.body.scrollTop)
-        / ((document.documentElement.scrollHeight || document.body.scrollHeight)
-           - document.documentElement.clientHeight) * 100;
+      const docElement = document.documentElement;
+      const docBody = document.body;
+      const offset = (docElement.scrollTop - docBody.scrollTop)
+        / ((docElement.scrollHeight || docBody.scrollHeight)
+          - docElement.clientHeight);
       setScrollOffset(offset);
     }
     window.addEventListener("scroll", update);
@@ -16,7 +17,7 @@ const useScroll = () => {
     return () => window.removeEventListener("scroll", update);
   }, []);
 
-  return { offset: scrollOffset };
+  return scrollOffset;
 };
 
 export default useScroll;
