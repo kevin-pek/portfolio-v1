@@ -10,18 +10,6 @@
   --clr-3: #6358AD;
 }
 
-.bg-orange {
-  background-color: #EA5;
-  background: radial-gradient(61.15% 61.15% at 68.85% 66.54%, #EA5 0%, rgba(234, 88, 12, 0) 100%);
-  background: conic-gradient(from -51.38deg at 68.85% 66.54%, #EA5 0deg, rgba(234, 88, 12, 0) 360deg);
-  mix-blend-mode: color-burn;
-}
-
-.bg-purple {
-  background: conic-gradient(from -51.38deg at 68.85% 66.54%, #380CEA 0deg, rgba(234, 88, 12, 0) 360deg);
-  mix-blend-mode: color-burn;
-}
-
 .card {
   --x-px: calc(var(--x) * 1px);
   --y-px: calc(var(--y) * 1px);
