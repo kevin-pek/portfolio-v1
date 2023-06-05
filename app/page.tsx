@@ -9,7 +9,6 @@ import HeroDom from '@/components/dom/Hero'
 import SkillsDom from '@/components/dom/Skills'
 import AboutDom from '@/components/dom/About'
 import ExperienceDom from '@/components/dom/Experience'
-import { Lenis } from '@studio-freight/react-lenis'
 import Footer from '@/components/dom/Footer'
 
 export default function Page() {
