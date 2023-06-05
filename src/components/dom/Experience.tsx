@@ -31,9 +31,8 @@ export default function Experience() {
 
         <TabContent className="text-xl text-white" label="Projects">
           <section className="mx-auto mt-8 w-11/12 lg:w-3/4">
-            <ul>
               {projects.map((event, i) =>
-                <li className='mb-8 flex flex-col justify-evenly gap-8 lg:flex-row' key={i}>
+                <div className='mb-8 flex flex-col justify-evenly gap-8 lg:flex-row' key={i}>
                   {event.children && i % 2 == 0 ?
                     <div className="my-auto hidden lg:block lg:w-1/2">
                       {event.children}
@@ -81,9 +80,8 @@ export default function Experience() {
                       {event.children}
                     </div>
                   : null}
-                </li>
+                </div>
               )}
-            </ul>
           </section>
         </TabContent>
       </Tab>
@@ -103,8 +101,8 @@ const experiences: EventProps[] = [
       'Deployed applications onto AWS EC2 using Docker Compose.',
       'Produced detailed API documentation according to the OpenAPI definition using Redocly.'
     ],
-    start: new Date('Aug 2022'),
-    end: new Date('May 2023')
+    start: new Date('08/01/2022'),
+    end: new Date('05/01/2023')
   },
   {
     title: 'Full Stack Intern at Idemia',
@@ -114,8 +112,8 @@ const experiences: EventProps[] = [
       'Wrote unit and integration tests using JUnit and Testcontainers.',
       'Fixing bugs on various services.',
     ],
-    start: new Date('May 2022'),
-    end: new Date('Aug 2022')
+    start: new Date('05/01/2022'),
+    end: new Date('08/01/2022')
   },
   {
     title: 'Research Assistant at NUS IORA',
@@ -126,8 +124,8 @@ const experiences: EventProps[] = [
       'Refactored machine learning python notebook into a REST API using Flask.',
       'Deployed application onto Heroku.'
     ],
-    start: new Date('April 2022'),
-    end: new Date('May 2023')
+    start: new Date('04/01/2022'),
+    end: new Date('05/01/2023')
   },
   {
     title: 'Modelling and Simulation Intern at DSTA',
@@ -136,8 +134,8 @@ const experiences: EventProps[] = [
       'Designed and developed high fidelity simulation environments in Unity for training Reinforcement Learning agents.',
       'Conducted and optimised training process for AI agents.'
     ],
-    start: new Date('Mar 2021'),
-    end: new Date('Jun 2021')
+    start: new Date('03/01/2021'),
+    end: new Date('06/01/2021')
   }
 ]
 
@@ -147,30 +145,30 @@ const projects: EventProps[] = [
     subtitle: 'Backend Lead',
     description: 'Developed backend services for the nonprofit Mercy Relief.',
     skills: ['Typescript', 'Express', 'React', 'NextJs', 'Material UI'],
-    start: new Date('Aug 2022'),
-    end: new Date('Dec 2023')
+    start: new Date('08/01/2022'),
+    end: new Date('12/01/2023')
   },
   {
     title: 'Brainworks',
     description: 'Quiz application developed in Unity.',
     skills: ['Unity', 'C#'],
-    start: new Date('Mar 2022'),
-    end: new Date('May 2022')
+    start: new Date('03/01/2022'),
+    end: new Date('05/01/2022')
   },
   {
     title: 'N Body Simulation in Unity',
     description: 'After getting acquainted with the Unity Game Engine from my internship at DSTA, I went on to create a simple N Body simulation in Unity. This process led me to learn about shaders, which I used to speed up computations and simulate large numbers of particles.',
     skills: ['Unity', 'C#'],
-    start: new Date('Jul 2021'),
-    end: new Date('Aug 2021'),
+    start: new Date('07/01/2021'),
+    end: new Date('08/01/2021'),
     children: <Image src={nbodysim} alt='n body simulation' />
   },
   {
     title: 'Space Shooter Game',
     description: 'This project marked the beginning of my journey into the world of Programming. Inspired by games that simulate realistic physics such as War Thunder, I attempted to create a 2D space battle game using simple geometric shapes and math formulas learnt in school.',
     skills: ['Lua', 'LOVE2D'],
-    start: new Date('Nov 2016'),
-    end: new Date('Jan 2017'),
+    start: new Date('11/01/2016'),
+    end: new Date('01/01/2017'),
     children: <Image src={spaceshipgame} alt='space shooter' />
   },
 ]
