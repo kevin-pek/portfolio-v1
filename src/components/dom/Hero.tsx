@@ -13,10 +13,6 @@ export default function Hero() {
         />
       </div>
 
-      <div>
-        <button className="mx-auto rounded-lg border border-white p-4">Contact Me</button>
-      </div>
-
       <div className="z-0">
         {/* top gradient bar */}
         <div className='bg-blur absolute -top-3/4 left-[-20vw] h-screen w-[120vw] bg-gradient-to-b from-[#6345CA] bg-blend-color-burn' />
