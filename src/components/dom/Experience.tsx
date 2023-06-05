@@ -35,7 +35,7 @@ export default function Experience() {
               {projects.map((event, i) =>
                 <li className='mb-8 flex flex-col justify-evenly gap-8 lg:flex-row' key={i}>
                   {event.children && i % 2 == 0 ?
-                    <div className="hidden lg:block lg:w-1/2 my-auto">
+                    <div className="my-auto hidden lg:block lg:w-1/2">
                       {event.children}
                     </div>
                   : null}
@@ -71,7 +71,7 @@ export default function Experience() {
                   </div>
 
                   {event.children && i % 2 == 1 ?
-                    <div className="hidden lg:block lg:w-1/2 my-auto">
+                    <div className="my-auto hidden lg:block lg:w-1/2">
                       {event.children}
                     </div>
                   : null}

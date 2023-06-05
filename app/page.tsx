@@ -14,7 +14,7 @@ import Footer from '@/components/dom/Footer'
 
 export default function Page() {
   return (
-    <Lenis root>
+    <>
       <div className='fixed h-screen w-screen'>
         <Canvas>
           <Index />
@@ -28,6 +28,6 @@ export default function Page() {
       <Footer />
       <Navbar />
       <Loader />
-    </Lenis>
+    </>
   )
 }
