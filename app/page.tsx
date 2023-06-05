@@ -15,9 +15,11 @@ import Footer from '@/components/dom/Footer'
 export default function Page() {
   return (
     <Lenis root>
-      <Canvas style={{ position: 'fixed' }}>
+      <div className='fixed h-screen w-screen'>
+      <Canvas>
         <Index />
       </Canvas>
+      </div>
 
       <HeroDom />
       <AboutDom />
