@@ -24,18 +24,18 @@ export default function Experience() {
 
       <Tab>
         <TabContent className="text-xl text-white" label="Experience">
-          <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
+          <section className="mx-auto mt-8 w-11/12 md:w-3/4">
             <Timeline events={experiences} />
           </section>
         </TabContent>
 
         <TabContent className="text-xl text-white" label="Projects">
-          <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
+          <section className="mx-auto mt-8 w-11/12 lg:w-3/4">
             <ul>
               {projects.map((event, i) =>
-                <li className='mb-8 flex flex-col justify-evenly gap-8 sm:flex-row' key={i}>
+                <li className='mb-8 flex flex-col justify-evenly gap-8 lg:flex-row' key={i}>
                   {event.children && i % 2 == 0 ?
-                    <div className="hidden sm:w-1/2">
+                    <div className="hidden lg:block lg:w-1/2 my-auto">
                       {event.children}
                     </div>
                   : null}
@@ -71,13 +71,13 @@ export default function Experience() {
                   </div>
 
                   {event.children && i % 2 == 1 ?
-                    <div className="hidden sm:w-1/2">
+                    <div className="hidden lg:block lg:w-1/2 my-auto">
                       {event.children}
                     </div>
                   : null}
 
                   {event.children ?
-                    <div className="w-full">
+                    <div className="mx-auto w-fit lg:hidden">
                       {event.children}
                     </div>
                   : null}
