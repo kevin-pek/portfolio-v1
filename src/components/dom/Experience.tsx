@@ -6,14 +6,14 @@ import { Timeline, Event, EventProps } from "../ui/Timeline"
 
 export default function Experience() {
   return (
-    <section className="relative bg-[#111]">
-      {/* Triangle gradient */}
+    <section id='work' className="relative bg-[#111] overflow-hidden">
+      {/* Triangle gradient 
       <div className="flex w-full flex-row">
         <div className="from-cold-900 h-96 w-1/2 -translate-y-40 -skew-y-12 bg-gradient-to-b to-[#111]" />
         <div className="from-cold-900 h-96 w-1/2 -translate-y-40 skew-y-12 bg-gradient-to-b to-[#111]" />
       </div>
-        
-      <div className='-translate-y-80'>
+        */}
+      <div>{/*className='-translate-y-80'>*/}
         <div className="text-center text-white">
           <h1 className='mb-4 text-3xl font-extrabold sm:text-5xl'>My Work</h1>
 
@@ -40,11 +40,48 @@ export default function Experience() {
             <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
               <ul>
                 {projects.map((event, i) =>
-                  <li className='mb-4 flex flex-row' key={i}>
-                    <div className='hidden w-1/6 sm:block'>
-                      <h1 className='p-4 text-right text-xl text-white'>{event.start.toLocaleDateString('default', { month: 'short', year: '2-digit' })} — {event.end.toLocaleDateString('default', { month: 'short', year: '2-digit' })}</h1>
+                  <li className='mb-8 flex flex-row gap-8 justify-evenly' key={i}>
+                    {event.children && i % 2 == 0 ?
+                      <div className="w-1/2">
+                        {event.children}
+                      </div>
+                    : null}
+
+                    <div className="w-1/2 my-auto text-justify text-sm text-white sm:w-5/6 sm:text-lg">
+                      <h2 className='text-2xl font-extrabold'>
+                        {event.title}
+                      </h2>
+                      {event.subtitle ?
+                        <h3 className='mt-2 text-xl sm:text-2xl'>
+                          {event.subtitle}
+                        </h3>
+                      : null}
+                      <div className="text-xl">
+                        {event.start.toLocaleDateString('default', { month: 'short', year: '2-digit' })} — {event.end.toLocaleDateString('default', { month: 'short', year: '2-digit' })}
+                      </div>
+                      {event.skills ?
+                        <div className='mt-2 flex flex-row gap-2'>
+                          <div className="text-xl font-extrabold">Skills:</div>
+                          {event.skills.map((p: string, i: number) =>
+                            <p className="list-item" key={i}>[{p}]</p>
+                          )}
+                        </div>
+                      : null}
+                      {event.description ? <p className='mt-2'>{event.description}</p> : null}
+                      {event.points ?
+                        <ul style={{ listStyleType: 'circle' }} className='ml-4 mt-2'>
+                          {event.points.map((p: string, i: number) =>
+                            <li className="list-item" key={i}>{p}</li>
+                          )}
+                        </ul>
+                      : null}
                     </div>
-                    <Event {...event} />
+
+                    {event.children && i % 2 == 1 ?
+                      <div className="w-1/2">
+                        {event.children}
+                      </div>
+                    : null}
                   </li>
                 )}
               </ul>

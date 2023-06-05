@@ -3,7 +3,7 @@ import portrait from "/public/img/portrait.png"
 
 export default function About() {
   return (
-    <section className='relative flex overflow-hidden py-32 text-gray-100 lg:pt-64 '>
+    <section id='about' className='relative flex overflow-hidden py-32 text-gray-100 lg:pt-64 '>
       <div className="mx-auto flex h-fit w-11/12 flex-row items-center gap-16 bg-gray-100 bg-opacity-5 py-8 md:px-8 lg:w-5/6 lg:px-12 lg:py-28">
         <div className='mx-auto flex flex-col gap-4 px-4 text-justify sm:px-0'>
           <h1 className='text-center text-5xl font-extrabold lg:mb-4'>About Me</h1>

@@ -1,6 +1,6 @@
 import './card.css'
 import 'devicon'
-import aws from '/public/icons/aws.svg'
+import Aws from '/public/icons/aws.svg'
 import Image from 'next/image';
 import { CSSProperties, useEffect, useRef, useState } from "react";
 
@@ -51,14 +51,14 @@ function Icon({ children, ...props }) {
 
 export default function Skills() {
   return (
-    <section className='relative w-screen overflow-hidden bg-[#111] pb-[50vh]'>
+    <section id='skills' className='relative w-screen overflow-hidden bg-[#111] py-16 lg:py-28'>
     {/* add canvas with highstorm website dust particles, or vector grid */}
 
       {/* faint glow at top of section */}
       <div className='absolute -top-20 left-[-5vw] z-10 h-28 w-[120vw] bg-gradient-to-b from-[#6345CA] bg-blend-color-burn blur' />
 
       <div className='mx-auto w-5/6'>
-        <div className='mb-8 mt-16 text-center text-5xl font-extrabold text-white lg:mt-28'>Skills</div>
+        <div className='mb-8 text-center text-5xl font-extrabold text-white'>Skills</div>
 
         <div className='flex flex-col gap-12'>
           {/* Add colored gradient glows using css */}
@@ -195,7 +195,7 @@ const devtools = [
     <p>MySQL</p>
   </>,
   <>
-    <Image src={aws} alt='aws' className='h-16 w-16 object-contain sm:h-24 sm:w-24' />
+    <Aws className='h-16 w-16 object-contain sm:h-24 sm:w-24' />
     <p>AWS</p>
   </>,
   <>

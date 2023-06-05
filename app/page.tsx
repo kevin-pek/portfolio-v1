@@ -10,6 +10,7 @@ import SkillsDom from '@/components/dom/Skills'
 import AboutDom from '@/components/dom/About'
 import ExperienceDom from '@/components/dom/Experience'
 import { Lenis } from '@studio-freight/react-lenis'
+import Footer from '@/components/dom/Footer'
 
 export default function Page() {
   return (
@@ -17,10 +18,12 @@ export default function Page() {
       <Canvas style={{ position: 'fixed' }}>
         <Index />
       </Canvas>
+
       <HeroDom />
       <AboutDom />
       <SkillsDom />
       <ExperienceDom />
+      <Footer />
       <Navbar />
       <Loader />
     </Lenis>

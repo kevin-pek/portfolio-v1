@@ -49,6 +49,12 @@ const nextConfig = {
       use: ['raw-loader', 'glslify-loader'],
     })
 
+    // to import svg as component
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    })
+
     return config
   },
 }

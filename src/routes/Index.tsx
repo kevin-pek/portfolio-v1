@@ -18,7 +18,7 @@ export default function Index() {
 
   useLayoutEffect(() => {
     tl.current = gsap.timeline()
-    tl.current.to(heroRef.current.position, { duration: 1, y: 1 })
+    tl.current.to(heroRef.current.position, { duration: 2, y: 2 })
   }, [])
 
   return (

@@ -1,11 +1,23 @@
 import { useState } from "react"
-import Image from 'next/image'
-import menu from '/public/icons/menu.svg'
-import github from '../../../public/icons/github.png'
-import linkedin from '../../../public/icons/linkedin.svg'
+import Menu from '/public/icons/menu.svg'
+import Github from '/public/icons/github.svg'
+import Linkedin from '/public/icons/linkedin.svg'
 import './navbar.css'
 
-const navLinks = ['About', 'Work', 'Contact']
+const navLinks = [
+  {
+    text: 'About',
+    onClick: () => document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })
+  },
+  {
+    text: 'Skills',
+    onClick: () => document.querySelector('#skills').scrollIntoView({ behavior: 'smooth' })
+  },
+  {
+    text: 'Work',
+    onClick: () => document.querySelector('#work').scrollIntoView({ behavior: 'smooth' })
+  }
+]
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false)
@@ -17,26 +29,30 @@ export default function Navbar() {
         <ul className='mx-auto hidden list-none flex-row gap-10 sm:flex'>
           {navLinks.map((nav, i) => 
             <li key={i} className='text-gray-300 duration-500 hover:text-white'>
-              <button>{nav}</button>
+              <button onClick={nav.onClick}>{nav.text}</button>
             </li>
           )}
           <li className='flex flex-row gap-3'>
             <a href='https://github.com/kevin-pek' target="_blank">
-              <Image src={github} alt='github' className='h-6 w-6 object-contain' />
+              <Github className='h-6 w-6 fill-gray-300 object-contain duration-500 hover:fill-white' />
             </a>
             <a href='https://www.linkedin.com/in/kevin-pek-yt' target="_blank">
-              <Image src={linkedin} alt='linkedin' className='h-6 w-6 object-contain' />
+              <Linkedin className='h-6 w-6 fill-gray-300 object-contain duration-500 hover:fill-white' />
             </a>
           </li>
         </ul>
         {/* mobile navbar */}
-        <div className='flex items-center justify-end sm:hidden'>
-          <Image src={menu} alt='menu' className='h-[28px] w-[28px] object-contain'
+        <div className='sm:hidden'>
+          <Menu
             onClick={() => setToggle(!toggle)} />
-          <div className={`${toggle ? 'flex' : 'hidden'} absolute right-0 top-20 z-10 mx-4 my-2 min-w-[140px] rounded-xl`}>
-            <ul className='list-none flex-row gap-10 sm:flex'>
+          <div className={`${toggle ? 'block' : 'hidden'} bg-cold-900 absolute h-[50vh] w-[75vw]`}>
+            <ul className='list-none flex-col items-center gap-10 sm:flex'>
               {navLinks.map((nav, i) => 
-                <li key={i}>{nav}</li>
+                <li key={i} className="h-24 p-4 text-2xl text-white">
+                  <button onClick={() => { nav.onClick(); setToggle(false) }}>
+                    {nav.text}
+                  </button>
+                </li>
               )}
             </ul>
           </div>
