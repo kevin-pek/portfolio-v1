@@ -125,7 +125,7 @@ const experiences: EventProps[] = [
       'Deployed application onto Heroku.'
     ],
     start: new Date('04/01/2022'),
-    end: new Date('05/01/2023')
+    end: new Date('05/01/2022')
   },
   {
     title: 'Modelling and Simulation Intern at DSTA',
@@ -142,8 +142,12 @@ const experiences: EventProps[] = [
 const projects: EventProps[] = [
   {
     title: 'Developer Student Club',
-    subtitle: 'Backend Lead',
-    description: 'Developed backend services for the nonprofit Mercy Relief.',
+    subtitle: 'Backend Software Engineer',
+    points: [
+      'Developed backend services for the nonprofit Mercy Relief.',
+      'Wrote unit tests in Cypress.',
+      'Setup CICD using Google Cloud Platforms.'
+    ],
     skills: ['Typescript', 'Express', 'React', 'NextJs', 'Material UI'],
     start: new Date('08/01/2022'),
     end: new Date('12/01/2023')
