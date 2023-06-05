@@ -1,7 +1,5 @@
 import './card.css'
-import 'devicon'
 import Aws from '/public/icons/aws.svg'
-import Image from 'next/image';
 import { CSSProperties, useEffect, useRef, useState } from "react";
 
 interface CSSMousePos extends CSSProperties {
