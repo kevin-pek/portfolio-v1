@@ -6,90 +6,87 @@ import { Timeline, Event, EventProps } from "../ui/Timeline"
 
 export default function Experience() {
   return (
-    <section id='work' className="relative bg-[#111] overflow-hidden">
-      {/* Triangle gradient 
-      <div className="flex w-full flex-row">
-        <div className="from-cold-900 h-96 w-1/2 -translate-y-40 -skew-y-12 bg-gradient-to-b to-[#111]" />
-        <div className="from-cold-900 h-96 w-1/2 -translate-y-40 skew-y-12 bg-gradient-to-b to-[#111]" />
-      </div>
-        */}
-      <div>{/*className='-translate-y-80'>*/}
-        <div className="text-center text-white">
-          <h1 className='mb-4 text-3xl font-extrabold sm:text-5xl'>My Work</h1>
+    <section id='work' className="relative overflow-hidden bg-[#111]">
+      <div className="text-center text-white">
+        <h1 className='mb-4 text-3xl font-extrabold sm:text-5xl'>My Work</h1>
 
-          <div className="mb-8 flex flex-row justify-center gap-4">
-            <div className="text-xl">Want a quick reference?<br />Download my resume!</div>
-            <a
-              target='_blank'
-              href='kevin-resume.pdf'
-              className='my-auto h-fit w-fit rounded-3xl border-white stroke-white p-2 hover:bg-gray-500'
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
-            </a>
-          </div>
+        <div className="mb-8 flex flex-row justify-center gap-4">
+          <div className="text-xl">Want a quick reference?<br />Download my resume!</div>
+          <a
+            target='_blank'
+            href='kevin-resume.pdf'
+            className='my-auto h-fit w-fit rounded-3xl border-white stroke-white p-2 hover:bg-gray-500'
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+          </a>
         </div>
-
-        <Tab>
-          <TabContent className="text-xl text-white" label="Experience">
-            <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
-              <Timeline events={experiences} />
-            </section>
-          </TabContent>
-
-          <TabContent className="text-xl text-white" label="Projects">
-            <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
-              <ul>
-                {projects.map((event, i) =>
-                  <li className='mb-8 flex flex-row gap-8 justify-evenly' key={i}>
-                    {event.children && i % 2 == 0 ?
-                      <div className="w-1/2">
-                        {event.children}
-                      </div>
-                    : null}
-
-                    <div className="w-1/2 my-auto text-justify text-sm text-white sm:w-5/6 sm:text-lg">
-                      <h2 className='text-2xl font-extrabold'>
-                        {event.title}
-                      </h2>
-                      {event.subtitle ?
-                        <h3 className='mt-2 text-xl sm:text-2xl'>
-                          {event.subtitle}
-                        </h3>
-                      : null}
-                      <div className="text-xl">
-                        {event.start.toLocaleDateString('default', { month: 'short', year: '2-digit' })} — {event.end.toLocaleDateString('default', { month: 'short', year: '2-digit' })}
-                      </div>
-                      {event.skills ?
-                        <div className='mt-2 flex flex-row gap-2'>
-                          <div className="text-xl font-extrabold">Skills:</div>
-                          {event.skills.map((p: string, i: number) =>
-                            <p className="list-item" key={i}>[{p}]</p>
-                          )}
-                        </div>
-                      : null}
-                      {event.description ? <p className='mt-2'>{event.description}</p> : null}
-                      {event.points ?
-                        <ul style={{ listStyleType: 'circle' }} className='ml-4 mt-2'>
-                          {event.points.map((p: string, i: number) =>
-                            <li className="list-item" key={i}>{p}</li>
-                          )}
-                        </ul>
-                      : null}
-                    </div>
-
-                    {event.children && i % 2 == 1 ?
-                      <div className="w-1/2">
-                        {event.children}
-                      </div>
-                    : null}
-                  </li>
-                )}
-              </ul>
-            </section>
-          </TabContent>
-        </Tab>
-
       </div>
+
+      <Tab>
+        <TabContent className="text-xl text-white" label="Experience">
+          <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
+            <Timeline events={experiences} />
+          </section>
+        </TabContent>
+
+        <TabContent className="text-xl text-white" label="Projects">
+          <section className="mx-auto mt-8 w-11/12 sm:w-3/4">
+            <ul>
+              {projects.map((event, i) =>
+                <li className='mb-8 flex flex-col justify-evenly gap-8 sm:flex-row' key={i}>
+                  {event.children && i % 2 == 0 ?
+                    <div className="hidden sm:w-1/2">
+                      {event.children}
+                    </div>
+                  : null}
+
+                  <div className={`my-auto w-full text-justify text-sm text-white ${event.children ? 'w-1/2' : 'w-full'} sm:text-lg`}>
+                    <h2 className='text-2xl font-extrabold'>
+                      {event.title}
+                    </h2>
+                    {event.subtitle ?
+                      <h3 className='mt-2 text-xl sm:text-2xl'>
+                        {event.subtitle}
+                      </h3>
+                    : null}
+                    <div className="text-xl">
+                      {event.start.toLocaleDateString('default', { month: 'short', year: '2-digit' })} — {event.end.toLocaleDateString('default', { month: 'short', year: '2-digit' })}
+                    </div>
+                    {event.skills ?
+                      <div className='mt-2 flex flex-row flex-wrap items-center gap-x-2'>
+                        <div className="text-xl font-extrabold">Skills:</div>
+                        {event.skills.map((p: string, i: number) =>
+                          <p key={i}>[{p}]</p>
+                        )}
+                      </div>
+                    : null}
+                    {event.description ? <p className='mt-2'>{event.description}</p> : null}
+                    {event.points ?
+                      <ul style={{ listStyleType: 'circle' }} className='ml-4 mt-2'>
+                        {event.points.map((p: string, i: number) =>
+                          <li className="list-item" key={i}>{p}</li>
+                        )}
+                      </ul>
+                    : null}
+                  </div>
+
+                  {event.children && i % 2 == 1 ?
+                    <div className="hidden sm:w-1/2">
+                      {event.children}
+                    </div>
+                  : null}
+
+                  {event.children ?
+                    <div className="w-full">
+                      {event.children}
+                    </div>
+                  : null}
+                </li>
+              )}
+            </ul>
+          </section>
+        </TabContent>
+      </Tab>
     </section>
   )
 }

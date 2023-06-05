@@ -16,9 +16,9 @@ export default function Page() {
   return (
     <Lenis root>
       <div className='fixed h-screen w-screen'>
-      <Canvas>
-        <Index />
-      </Canvas>
+        <Canvas>
+          <Index />
+        </Canvas>
       </div>
 
       <HeroDom />

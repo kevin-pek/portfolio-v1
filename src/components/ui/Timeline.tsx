@@ -24,7 +24,7 @@ export const Event = ({ ...props }: EventProps) => {
         <div className='mt-2 flex flex-row gap-2'>
           <div className="text-xl font-extrabold">Skills:</div>
           {props.skills.map((p: string, i: number) =>
-            <p className="list-item" key={i}>[{p}]</p>
+            <p className="list-item my-auto" key={i}>[{p}]</p>
           )}
         </div>
       : null}
