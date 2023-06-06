@@ -1,8 +1,9 @@
+import React from 'react'
 import Image from "next/image"
 import spaceshipgame from '/public/img/spaceshipgame.gif'
 import nbodysim from '/public/img/nbodysim.gif'
 import { Tab, TabContent } from "../ui/Tab"
-import { Timeline, Event, EventProps } from "../ui/Timeline"
+import { Timeline, EventProps } from "../ui/Timeline"
 
 export default function Experience() {
   return (

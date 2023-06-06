@@ -1,3 +1,5 @@
+import React from "react"
+
 export const metadata = {
   title: 'Kevin Pek',
   description: 'Portfolio of Kevin Pek',

@@ -1,5 +1,11 @@
 {
-  "extends": ["next", "prettier", "plugin:tailwindcss/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
   "rules": {
     "import/prefer-default-export": "off",
     "no-console": "warn",

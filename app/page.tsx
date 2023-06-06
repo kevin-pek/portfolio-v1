@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import Navbar from '@/components/dom/Navbar'
 import { Loader } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
