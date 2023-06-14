@@ -1,3 +1,4 @@
+/* eslint-disable */
 import DofPointsMaterial from "./shaders/DofPointsMaterial"
 import DofAccPointsMaterial from "./shaders/DofAccPointsMaterial"
 import SimulationMaterial from "./shaders/SimulationMaterial"

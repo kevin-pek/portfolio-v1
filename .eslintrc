@@ -1,15 +1,15 @@
 {
   "extends": [
-    "eslint:recommended",
+    "eslint:recosmended",
     "next",
     "prettier",
-    "plugin:react/recommended",
     "plugin:tailwindcss/recommended"
   ],
   "rules": {
     "import/prefer-default-export": "off",
     "no-console": "warn",
     "no-var": "error",
-    "no-html-link-for-pages": "off"
+    "no-html-link-for-pages": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

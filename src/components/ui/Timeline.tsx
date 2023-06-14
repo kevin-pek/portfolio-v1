@@ -42,14 +42,6 @@ export const Event = ({ ...props }: EventProps) => {
 }
 
 export function Timeline({ events }: { events: EventProps[] }) {
-  // calculate the translate y value based on start and end of the event
-  const offsets = useMemo(() => {
-    const now = Date.now()
-    const end = Math.min(...events.map(event => event.start.getTime()))
-    const range = now - end;
-    return events.map(event => (now - event.end.getTime()) / range * 100)
-  }, [events]);
-
   return (
     <div className='h-fit'>
       <div className={`from-cold-800 absolute z-10 mt-5 h-full w-[1px] bg-gradient-to-br to-white sm:left-1/4`} />
