@@ -45,8 +45,8 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile navbar */}
-      <div className={`${toggle ? 'fixed' : 'hidden'} left-0 top-0 z-40 h-[100dvh] w-screen bg-gray-900 opacity-90 sm:hidden`}>
-        <div className='flex h-full list-none flex-col items-center justify-evenly gap-10 text-center'>
+      <div className={`${toggle ? 'fixed' : 'hidden'} left-0 top-0 z-40 h-[100vh] w-screen bg-gray-900 opacity-90 sm:hidden`}>
+        <div className='flex h-5/6 list-none flex-col items-center justify-evenly gap-10 text-center'>
           {navLinks.map((nav, i) => 
             <div key={i} className="p-4 text-2xl text-white">
               <button onClick={() => { nav.onClick(); setToggle(false) }}>
