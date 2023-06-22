@@ -1,8 +1,8 @@
 import React from "react"
 const title = 'Kevin Pek'
-const url = 'https://react-three-next.vercel.app/'
-const description = 'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
-const author = 'Author'
+const url = 'https://kevinpek.com/'
+const description = 'Kevin Pek, Software Engineer, Web Developer, Data Science and Analytics Student at NUS.'
+const author = 'Kevin Pek'
 
 export default function Head() {
   return (
@@ -11,8 +11,6 @@ export default function Head() {
       <meta charSet='utf-8' />
       <meta name='language' content='english' />
       <meta httpEquiv='content-type' content='text/html' />
-      <meta name='Kevin Pek' content={author} />
-      <meta name='Kevin Pek' content={author} />
       <meta name='Kevin Pek' content={author} />
 
       {/* Search Engine Optimization Meta Tags */}

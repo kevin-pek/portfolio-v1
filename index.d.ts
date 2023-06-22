@@ -1,16 +1,15 @@
-/* eslint-disable */
-import DofPointsMaterial from "./shaders/DofPointsMaterial"
-import DofAccPointsMaterial from "./shaders/DofAccPointsMaterial"
-import SimulationMaterial from "./shaders/SimulationMaterial"
+import DofPointsMaterial from "./src/shaders/DofPointsMaterial"
+import DofAccPointsMaterial from "./src/shaders/DofAccPointsMaterial"
+import SimulationMaterial from "./src/shaders/SimulationMaterial"
 
 declare module '*.vert' {
-    const content: string
-    export default content
+  const content: string
+  export default content
 }
 
 declare module '*.frag' {
-    const content: string
-    export default content
+  const content: string
+  export default content
 }
 
 declare global {
