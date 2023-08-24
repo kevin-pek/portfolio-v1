@@ -13,6 +13,16 @@ export default function Hero() {
         />
       </div>
 
+      <div className="mt-8">
+        <a
+          target='_blank'
+          href='kevin-cv.pdf'
+          className='my-auto h-fit w-fit rounded-lg border-solid border border-[#6345CA] text-[#B395FA] p-4 px-8 hover:bg-[#6345CA] hover:text-white transition-colors'
+        >
+        Resume
+        </a>
+      </div>
+
       <div className="z-0">
         {/* top gradient bar */}
         <div className='bg-blur absolute -top-3/4 left-[-20vw] h-screen w-[120vw] bg-gradient-to-b from-[#6345CA] bg-blend-color-burn' />

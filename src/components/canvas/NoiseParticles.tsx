@@ -17,7 +17,7 @@ const speed = 0.1
 const size = 48
 const accentCount = 24
 
-export default function Hero() {
+export default function NoiseParticles() {
   const [scene] = useState(() => new THREE.Scene())
   const [camera] = useState(() => new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1))
 

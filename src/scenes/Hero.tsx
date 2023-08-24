@@ -3,10 +3,10 @@ import * as THREE from 'three'
 import gsap from 'gsap'
 import { PerspectiveCamera, Sphere } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import Hero from '@/components/canvas/Hero'
+import NoiseParticles from '@/components/canvas/NoiseParticles'
 import useScroll from '@/hooks/useScroll'
 
-export default function Index() {
+export default function Hero() {
   const cam = useRef<THREE.Camera>()
   const scroll = useScroll()
   const tl = useRef<gsap.core.Timeline>()
@@ -29,7 +29,7 @@ export default function Index() {
       <PerspectiveCamera ref={cam} makeDefault fov={20} position={[0, 0, 3]} far={13} />
       
       <group ref={heroRef}>
-        <Hero />
+        <NoiseParticles />
       </group>
     </>
   )
