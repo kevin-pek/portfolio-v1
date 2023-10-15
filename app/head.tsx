@@ -18,7 +18,7 @@ export default function Head() {
       <meta name='description' content={description} />
       <meta
         name='keywords'
-        content='Software Engineer,Web Developer,Data Scientist,Computer Scientist'
+        content='Software Engineer,Web Developer,Data Scientist,Computer Scientist,Machine Learning'
       />
       <meta name='robots' content='index,follow' />
       <meta name='distribution' content='web' />

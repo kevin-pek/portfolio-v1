@@ -15,7 +15,7 @@ export default function Experience() {
           <div className="text-xl">Want a quick reference?<br />Download my resume!</div>
           <a
             target='_blank'
-            href='kevin-cv.pdf'
+            href='KevinPekYueTing.pdf'
             className='my-auto h-fit w-fit rounded-3xl border-white stroke-white p-2 hover:bg-gray-500'
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
@@ -92,7 +92,14 @@ export default function Experience() {
 
 const experiences: EventProps[] = [
   {
-    title: 'Full Stack Developer/Research Assistant at NUS IORA',
+    title: 'Head of Technology @ Google Developer Student Club',
+    subtitle: 'Project Ignite',
+    description: 'I am currently leading a team of developers to make a resource sharing platform for small non profit organisations that will allow them work with external companies and organisations, and increase access to the resources they often need.',
+    start: new Date('06/01/2023'),
+    end: new Date()
+  },
+  {
+    title: 'Full Stack Developer/Research Assistant @ NUS IORA',
     subtitle: 'Learning Platform for Intelligent Tutoring Systems using Multi Armed Bandits',
     description: 'Designed and developed a learning platform that uses a machine learning algorithms to recommend questions based on the trainee\'s profile data to maximise their learning. Features dashboards for analytics, quiz content, model and user management systems for trainers, and a learning dashboard and quiz interface for trainees.',
     points: [
@@ -106,7 +113,7 @@ const experiences: EventProps[] = [
     end: new Date('05/01/2023')
   },
   {
-    title: 'Full Stack Intern at Idemia',
+    title: 'Full Stack Intern @ Idemia',
     description: '',
     points: [
       'Developed application for microservice orchestration in Java using Spring Boot and Apache Camel.',
@@ -117,7 +124,7 @@ const experiences: EventProps[] = [
     end: new Date('08/01/2022')
   },
   {
-    title: 'Research Assistant at NUS IORA',
+    title: 'Research Assistant @ NUS IORA',
     subtitle: 'Learning Platform for Intelligent Tutoring Systems using Multi Armed Bandits',
     description: 'Developed minimum viable product for a learning platform utilising Multi Armed Bandit algorithms to recommend questions based on trainee\'s prodile data to maximise their learning.',
     points: [
@@ -129,7 +136,7 @@ const experiences: EventProps[] = [
     end: new Date('05/01/2022')
   },
   {
-    title: 'Modelling and Simulation Intern at DSTA',
+    title: 'Modelling and Simulation Intern @ DSTA',
     description: '',
     points: [
       'Designed and developed high fidelity simulation environments in Unity for training Reinforcement Learning agents.',
@@ -143,9 +150,9 @@ const experiences: EventProps[] = [
 const projects: EventProps[] = [
   {
     title: 'Developer Student Club',
-    subtitle: 'Backend Software Engineer',
+    subtitle: 'Software Engineer',
     points: [
-      'Developed backend services for the nonprofit Mercy Relief.',
+      'Software engineer for a project working on a website revamp for a non profit organisation.',
       'Wrote unit tests in Cypress.',
       'Setup CICD using Google Cloud Platforms.'
     ],
@@ -155,7 +162,7 @@ const projects: EventProps[] = [
   },
   {
     title: 'Brainworks',
-    description: 'Quiz application developed in Unity.',
+    description: 'Quiz application developed in Unity. It is used for acessing the cognitive capabilities of patients suffering from Alzheimer\'s Disease.',
     skills: ['Unity', 'C#'],
     start: new Date('03/01/2022'),
     end: new Date('05/01/2022')
@@ -170,7 +177,7 @@ const projects: EventProps[] = [
   },
   {
     title: 'Space Shooter Game',
-    description: 'This project marked the beginning of my journey into the world of Programming. Inspired by games that simulate realistic physics such as War Thunder, I attempted to create a 2D space battle game using simple geometric shapes and math formulas learnt in school.',
+    description: 'This project marked the beginning of my journey into the world of Programming. Inspired by games that have include physics calculations in their damage model such as War Thunder and World of Warships, I attempted to create a 2D space battle game using simple geometric shapes and the mathematics taught in school.',
     skills: ['Lua', 'LOVE2D'],
     start: new Date('11/01/2016'),
     end: new Date('01/01/2017'),
