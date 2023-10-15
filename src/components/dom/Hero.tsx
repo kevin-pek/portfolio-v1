@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="mt-8">
         <a
           target='_blank'
-          href='kevin-cv.pdf'
+          href='KevinPekYueTing.pdf'
           className='my-auto h-fit w-fit rounded-lg border-solid border border-[#6345CA] text-[#B395FA] p-4 px-8 hover:bg-[#6345CA] hover:text-white transition-colors'
         >
         Resume
